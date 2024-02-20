@@ -2,6 +2,7 @@ package com.example.gdsc.Controller;
 
 import com.example.gdsc.Dto.MemberDto;
 import com.example.gdsc.service.RestTemplateService;
+import com.example.gdsc.service.WebClientService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class RestTemplateController {
 
     private final RestTemplateService restTemplateService;
+
 
     public RestTemplateController(RestTemplateService restTemplateService) {
         this.restTemplateService = restTemplateService;
@@ -28,6 +30,7 @@ public class RestTemplateController {
         return restTemplateService.getNameWithPathVariable();
     }
 
+
     @GetMapping("/parameter")
     public String getNameWithParameter(){
         return restTemplateService.getNameWithParameter();
@@ -38,9 +41,14 @@ public class RestTemplateController {
         return restTemplateService.postWithParamAndBody();
     }
 
+
     @PostMapping("/header")
     public ResponseEntity<MemberDto> postWithHeader(){
         return restTemplateService.postWithHeader();
     }
+
+
+    //webClientService .사용
+
 
 }

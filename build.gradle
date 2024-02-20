@@ -59,7 +59,9 @@ dependencies {
 
 	implementation 'org.springframework.boot:spring-boot-starter'
 
+	//12징
 	implementation 'org.apache.httpcomponents:httpclient'
+	implementation 'org.springframework.boot:spring-boot-starter-webflux'
 }
 
 

@@ -24,7 +24,7 @@ public class Producer extends BaseEntity{
 
     //다대다 단방향 매핑
     @ManyToMany
-    @JoinTable(name="midTable")
+
     @ToString.Exclude
     private List<Product> products = new ArrayList<>();
 
