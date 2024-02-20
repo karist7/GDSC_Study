@@ -91,14 +91,14 @@ public class WebClientService {
 
         MemberDto memberDto = new MemberDto();
         memberDto.setName("flature!");
-        memberDto.setEmail("flature@gmail.com");
+        memberDto.setEmail("flature@naver.com");
         memberDto.setOrganization("Spring");
 
         return webClient.post()
                 .uri(uriBuilder -> uriBuilder.path("/api/v1/crud-api/add-header")
                         .build())
                 .bodyValue(memberDto)
-                .header("my-headeer","GDSC API")
+                .header("my-header","GDSC API")
                 .retrieve()
                 .toEntity(MemberDto.class)
                 .block();

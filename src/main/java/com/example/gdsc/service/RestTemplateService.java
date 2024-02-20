@@ -79,10 +79,11 @@ public class RestTemplateService {
         return responseEntity;
     }
 
+
     public ResponseEntity<MemberDto> postWithHeader(){
         URI uri = UriComponentsBuilder
                 .fromUriString("http://localhost:9090")
-                .path("/api/v1/crud-api")
+                .path("/api/v1/crud-api/add-header")
 
                 .encode()
                 .build()

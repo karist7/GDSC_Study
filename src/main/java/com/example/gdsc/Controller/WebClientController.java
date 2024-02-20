@@ -16,10 +16,23 @@ public class WebClientController {
     public WebClientController(WebClientService webClientService) {
         this.webClientService = webClientService;
     }
+    @GetMapping
+    public String getName(){
+        return webClientService.getName();
+    }
+    @GetMapping("/path-variable")
+    public String getNameWithPathVariable(){
+        return webClientService.getNameWithPathVariable();
+    }
 
     @GetMapping("/parameter")
     public String getNameWithParameter2(){
         return webClientService.getNameWithParameter();
+    }
+
+    @PostMapping
+    public ResponseEntity<MemberDto> postDto(){
+        return webClientService.postWithParamAndBody();
     }
     @PostMapping("/header")
     public ResponseEntity<MemberDto> postWithHeader(){
